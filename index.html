@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/stylesheets/reset-css/reset.css">
+    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <title>Jeu du pendu</title>
+</head>
+<body>
+    <header>
+        <h1>Jeu du pendu</h1>
+    </header>
+    <main>
+        <div class="tryCounterContainer">
+            <h2 class="tryCounterTitle">Essais</h2>
+            <div class="tryCounterNbr"><span class="counter">0</span>/7</div>
+        </div>
+        <div class="game">
+            <div class="hangmanWordContainer">
+                <div class="hangmanContainer">
+                    <!-- <img class="paper" src="assets/images/papiers-1.png" alt="feuille de papier quadrillée"> -->
+                    <img class="hangman" src="assets/images/hangman.png" alt="dessin pendu">
+                </div>
+                <div class="wordToGuess">
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter1"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter2"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter3"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter4"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter5"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter6"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter7"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter8"></div></div>
+                    <div class="letterToGuessContainer"><div class="letterToGuess" id="letter9"></div></div>
+                </div>
+            </div>
+            <div class="keyboard">
+                <button class="letterContainer"><span class="letter" id="letterA">A</span></button>
+                <button class="letterContainer"><span class="letter" id="letterB">B</span></button>
+                <button class="letterContainer"><span class="letter" id="letterC">C</span></button>
+                <button class="letterContainer"><span class="letter" id="letterD">D</span></button>
+                <button class="letterContainer"><span class="letter" id="letterE">E</span></button>
+                <button class="letterContainer"><span class="letter" id="letterF">F</span></button>
+                <button class="letterContainer"><span class="letter" id="letterG">G</span></button>
+                <button class="letterContainer"><span class="letter" id="letterH">H</span></button>
+                <button class="letterContainer"><span class="letter" id="letterI">I</span></button>
+                <button class="letterContainer"><span class="letter" id="letterJ">J</span></button>
+                <button class="letterContainer"><span class="letter" id="letterK">K</span></button>
+                <button class="letterContainer"><span class="letter" id="letterL">L</span></button>
+                <button class="letterContainer"><span class="letter" id="letterM">M</span></button>
+                <button class="letterContainer"><span class="letter" id="letterN">N</span></button>
+                <button class="letterContainer"><span class="letter" id="letter0">O</span></button>
+                <button class="letterContainer"><span class="letter" id="letterP">P</span></button>
+                <button class="letterContainer"><span class="letter" id="letterQ">Q</span></button>
+                <button class="letterContainer"><span class="letter" id="letterR">R</span></button>
+                <button class="letterContainer"><span class="letter" id="letterS">S</span></button>
+                <button class="letterContainer"><span class="letter" id="letterT">T</span></button>
+                <button class="letterContainer"><span class="letter" id="letterU">U</span></button>
+                <button class="letterContainer"><span class="letter" id="letterV">V</span></button>
+                <button class="letterContainer"><span class="letter" id="letterW">W</span></button>
+                <button class="letterContainer"><span class="letter" id="letterX">X</span></button>
+                <button class="letterContainer"><span class="letter" id="letterY">Y</span></button>
+                <button class="letterContainer"><span class="letter" id="letterZ">Z</span></button>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

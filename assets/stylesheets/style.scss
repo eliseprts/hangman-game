@@ -1,0 +1,129 @@
+// GENERAL SETTINGS
+
+// Font-family : "Open Sans", sans serif
+// Font-family : "Chelsea Market", cursive
+
+// Colors
+$primary-color: #264653;
+$secondary-color: #2a9d8f;
+$third-color: #969696;
+$primary-accent-color: #f4a261;
+$secondary-accent-color: #e76f51;
+
+// Body
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  background-color: #fff;
+  color: $primary-color;
+  margin-left: 150px;
+  margin-right: 150px;
+}
+
+// Header
+h1 {
+  font-family: "Chelsea Market", cursive;
+  text-transform: uppercase;
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-top: 82px;
+}
+
+// Try Counter
+.tryCounterContainer {
+  display: flex;
+  gap: 40px;
+  justify-content: flex-end;
+  margin-top: 65px;
+  h2 {
+    font-family: "Chelsea Market", cursive;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $secondary-color;
+    letter-spacing: 0.1em;
+  }
+  .tryCounterNbr {
+    font-size: 24px;
+    .counter {
+      font-size: 36px;
+      font-weight: 300;
+      color: $third-color;
+    }
+  }
+}
+
+// Positioning game
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 82px;
+}
+
+// Hangman & word to guess
+
+.hangmanWordContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+// Hangman
+
+// .paper {
+//   width: 460px;
+//   position: relative;
+// }
+.hangman {
+  width: 450px;
+  position: relative;
+  background-image: url(assets/images/papiers-1.png);
+  // z-index: 1;
+}
+
+// Word to guess
+
+.wordToGuess {
+  margin-top: 15px;
+  display: flex;
+  gap: 10px;
+  .letterToGuessContainer {
+    width: 42px;
+    height: 50px;
+    border-bottom: 3px solid #264653;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .letterToGuess {
+      font-family: "Chelsea Market", cursive;
+      font-size: 40px;
+    }
+  }
+}
+
+// Keyboard
+
+.keyboard {
+  width: 411px;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  .letterContainer {
+    width: 60px;
+    height: 60px;
+    background-color: #f4a261;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .letter {
+      font-size: 36px;
+      color: #fff;
+    }
+  }
+}
