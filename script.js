@@ -1,38 +1,87 @@
-(() => {
 
-    // Word to guess
 
-    const wordToGuess = "crocodile"
-    const arrWordToGuess = wordToGuess.split("")
+const wordElem = document.getElementById("wordToGuess");
+const playBtn = document.getElementById("playBtn");
+const popup = document.getElementById("popupContainer");
+const finalMessage = document.getElementById("finalMessage");
 
-    console.log(wordToGuess);
-    console.log(arrWordToGuess);
+// Words to guess
 
-    // document.getElementById("letterC").addEventListener("click", () => {
+const wordsToGuess = ["crocodile", "tortue", "singe", "poisson", "araignée", "perroquet"];
+let selectedWord = wordsToGuess[Math.floor(Math.random() * wordsToGuess.length)];
 
-    //     const C = document.getElementById("letterC").innerHTML
-    //     document.getElementById("letter1").innerHTML = C
-    //     document.getElementById("letter4").innerHTML = C
+console.log(selectedWord);
 
-    // })
+const arrRightLetters = [];
+const arrWrongLetters = [];
 
-    const letterBtns = document.getElementsByClassName("letter");
+// Display words to guess
 
-    for (var i = 0; i < letterBtns.length; i++) {
+function displayWord() {
 
-        letterBtns[i].addEventListener("click", () => {
+    wordElem.innerHTML = `
+            ${selectedWord
+            .split('')
+            .map(
+                letter => `
+                    <span class="letterToGuess">
+                        ${arrRightLetters.includes(letter) ? letter : ''}
+                    </span>
+                    `
+            )
+            .join('')
+        }
+        `;
 
-            // console.log("test")
+    const internWord = wordElem.innerText.replace(/\n/g, '');
 
-            const letter1 = letterBtns[i].innerHTML
-            console
-
-            for (let elem of letterBtns) {
-                console.log(elem.innerHTML)
-            }
-
-        })
+    if (internWord === selectedWord) {
+        finalMessage.innerText = "Bravo ! Tu as gagné !";
+        popup.style.display = "flex";
     }
 
+}
 
-})();
+displayWord();
+
+// Counter
+
+const counter = document.getElementById("tryCounterNbr");
+counter.innerHTML = "7";
+
+function incrementCounter() {
+    for (c = 7; c <= 7; c--) {
+        counter.innerHTML = c + "/7";
+    }
+}
+
+
+// Play
+
+const letter = "x"
+
+if (selectedWord.includes(letter)) {
+    arrRightLetters.push(letter);
+    displayWord();
+}
+
+else {
+    arrWrongLetters.push(letter);
+    incrementCounter();
+}
+
+
+// const letterBtns = document.querySelectorAll(".letter");
+
+// for (var i = 0; i < letterBtns.length; i++) {
+
+//     let selectedLetter = letterBtns[i].innerText;
+
+//     letterBtns[i].addEventListener("click", () => {
+
+//         console.log(selectedLetter);
+
+//     })
+// }
+
+
