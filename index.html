@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/stylesheets/reset-css/reset.css">
-    <link rel="stylesheet" href="/assets/stylesheets/style.css">
+    <link rel="stylesheet" href="assets/style/reset-css/reset.css">
+    <link rel="stylesheet" href="assets/style/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Chelsea+Market&family=Open+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -16,58 +16,78 @@
     <header>
         <h1>Jeu du pendu</h1>
     </header>
-    
+
     <main>
-        <div class="tryCounterContainer">
+        
+        <!-- <div class="tryCounterContainer">
             <h2 class="tryCounterTitle">Essais restants</h2>
-            <div class = "tryCounterNbr" id="tryCounterNbr"></div>
-        </div>
+            <div class="tryCounterNbr" id="tryCounterNbr"></div>
+        </div> -->
+
         <div class="game">
+
             <div class="hangmanWordContainer">
                 <div class="hangmanContainer">
-                    <img class="hangman" src="assets/images/hangman.png" alt="dessin pendu">
+                    <img src="assets/images/hangman.png" alt="dessin pendu" class="hangman">
                 </div>
-                <div class="wordToGuess" id="wordToGuess"> 
-                    <!-- <span class="letterToGuess">C</span> -->
+                <div id="hiddenWord">
+                    <!-- <div id="hiddenLetterContainer" class="hiddenLetterContainer">
+                        <input type="text" id="hiddenLetter" class="hiddenLetter" value="C">
+                    </div> -->
+                </div>
+                <div id="guessedWord">
+                    <!-- <div id="guessedLetterContainer1" class="guessedLetterContainer">
+                        <input type="text" id="guessedLetter1" class="guessedLetter" disabled>
+                    </div> -->
                 </div>
             </div>
-            <div class="keyboard">
-                <button class="letterContainer"><span class="letter" id="letterA" value="A" onclick="selectLetter(this)">A</span></button>
-                <button class="letterContainer"><span class="letter" id="letterB" value="B" onclick="selectLetter(this)">B</span></button>
-                <button class="letterContainer"><span class="letter" id="letterC" value="C" onclick="selectLetter(this);">C</span></button>
-                <button class="letterContainer"><span class="letter" id="letterD" value="D" onclick="selectLetter(this);">D</span></button>
-                <button class="letterContainer"><span class="letter" id="letterE" value="E" onclick="selectLetter(this);">E</span></button>
-                <button class="letterContainer"><span class="letter" id="letterF" value="F" onclick="selectLetter(this);">F</span></button>
-                <button class="letterContainer"><span class="letter" id="letterG" value="G" onclick="selectLetter(this);">G</span></button>
-                <button class="letterContainer"><span class="letter" id="letterH" value="H" onclick="selectLetter(this);">H</span></button>
-                <button class="letterContainer"><span class="letter" id="letterI" value="I" onclick="selectLetter(this);">I</span></button>
-                <button class="letterContainer"><span class="letter" id="letterJ" value="J" onclick="selectLetter(this);">J</span></button>
-                <button class="letterContainer"><span class="letter" id="letterK" value="K" onclick="selectLetter(this);">K</span></button>
-                <button class="letterContainer"><span class="letter" id="letterL" value="L" onclick="selectLetter(this);">L</span></button>
-                <button class="letterContainer"><span class="letter" id="letterM" value="M" onclick="selectLetter(this);">M</span></button>
-                <button class="letterContainer"><span class="letter" id="letterN" value="N" onclick="selectLetter(this);">N</span></button>
-                <button class="letterContainer"><span class="letter" id="letter0" value="O" onclick="selectLetter(this);">O</span></button>
-                <button class="letterContainer"><span class="letter" id="letterP" value="P" onclick="selectLetter(this);">P</span></button>
-                <button class="letterContainer"><span class="letter" id="letterQ" value="Q" onclick="selectLetter(this);">Q</span></button>
-                <button class="letterContainer"><span class="letter" id="letterR" value="R" onclick="selectLetter(this);">R</span></button>
-                <button class="letterContainer"><span class="letter" id="letterS" value="S" onclick="selectLetter(this);">S</span></button>
-                <button class="letterContainer"><span class="letter" id="letterT" value="T" onclick="selectLetter(this);">T</span></button>
-                <button class="letterContainer"><span class="letter" id="letterU" value="U" onclick="selectLetter(this);">U</span></button>
-                <button class="letterContainer"><span class="letter" id="letterV" value="V" onclick="selectLetter(this);">V</span></button>
-                <button class="letterContainer"><span class="letter" id="letterW" value="W" onclick="selectLetter(this);">W</span></button>
-                <button class="letterContainer"><span class="letter" id="letterX" value="X" onclick="selectLetter(this);">X</span></button>
-                <button class="letterContainer"><span class="letter" id="letterY" value="Y" onclick="selectLetter(this);">Y</span></button>
-                <button class="letterContainer"><span class="letter" id="letterZ" value="Z" onclick="selectLetter(this);">Z</span></button>
-            </div>
-        </div>
-    </main>
 
-    <div class="popupContainer" id="popupContainer">
-        <div class="popup">
-            <h3 id="finalMessage"> </h3>
-            <button id="playBtn">Rejouer !</button>
+            <div class="keyboard">
+
+                <div id="hiddenText"><input type="text" id="inputTextHidden" value="test"></div>
+
+                <div class="line1">
+                    <input type="button" id="letterA" value="A" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterB" value="B" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterC" value="C" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterD" value="D" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterE" value="E" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterF" value="F" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                </div>
+                <div class="line2">
+                    <input type="button" id="letterG" value="G" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterH" value="H" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterI" value="I" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterJ" value="J" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterK" value="K" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterL" value="L" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                </div>
+                <div class="line3">
+                    <input type="button" id="letterM" value="M" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterN" value="N" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterO" value="O" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterP" value="P" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterQ" value="Q" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterR" value="R" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                </div>
+                <div class="line4">
+                    <input type="button" id="letterS" value="S" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterT" value="T" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterU" value="U" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterV" value="V" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterW" value="W" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterX" value="X" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                </div>
+                <div class="line5">
+                    <input type="button" id="letterY" value="Y" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                    <input type="button" id="letterZ" value="Z" class="btnKeyboard" disabled onclick="selectLetter(this.value)">
+                </div>
+
+            </div>
+
         </div>
-    </div>
+
+    </main>
 
     <script src="script/script.js"></script>
 

@@ -1,0 +1,137 @@
+// GENERAL SETTINGS
+
+// Font-family : "Open Sans", sans serif
+// Font-family : "Chelsea Market", cursive
+
+// Colors
+$primary-color: #264653;
+$secondary-color: #2a9d8f;
+$third-color: #969696;
+$primary-accent-color: #f4a261;
+$secondary-accent-color: #e76f51;
+
+// Body
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  background-color: #fff;
+  color: $primary-color;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Header
+h1 {
+  font-family: "Chelsea Market", cursive;
+  text-transform: uppercase;
+  font-size: 64px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  margin-top: 50px;
+}
+
+// // Try Counter
+// .tryCounterContainer {
+//   display: flex;
+//   gap: 40px;
+//   justify-content: flex-end;
+//   margin-top: 65px;
+//   h2 {
+//     font-family: "Chelsea Market", cursive;
+//     font-size: 24px;
+//     text-transform: uppercase;
+//     color: $secondary-color;
+//     letter-spacing: 0.1em;
+//   }
+//   .tryCounterNbr {
+//     font-size: 24px;
+//   }
+// }
+
+// Positioning game
+
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 100px;
+  margin-bottom: 50px;
+}
+
+// Hangman & word to guess
+
+.hangmanWordContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+// Hangman
+
+.hangman {
+  width: 350px;
+  position: relative;
+}
+
+// Word to guess
+
+#hiddenWord {
+  display: none;
+  .hiddenLetterContainer {
+    display: inline;
+    .hiddenLetter {
+      width: 30px;
+      height: 30px;
+      margin: 10px;
+      display: none;
+    }
+  }
+}
+
+#guessedWord {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  .guessedLetter {
+    border: none;
+    background: none;
+    width: 32px;
+    height: 50px;
+    margin: 0 3px;
+    font-family: "Chelsea Market", cursive;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-size: 30px;
+    text-align: center;
+    border-bottom: 3px solid $primary-color;
+  }
+}
+
+// Keyboard
+
+#hiddenText {
+  display: none;
+}
+
+.line1,
+.line2,
+.line3,
+.line4,
+.line5 {
+  padding-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  input {
+    cursor: pointer;
+    border: none;
+    width: 50px;
+    height: 50px;
+    background-color: #f4a261;
+    border-radius: 50%;
+    font-size: 30px;
+    color: #fff;
+  }
+}

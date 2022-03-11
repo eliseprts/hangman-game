@@ -1,100 +1,74 @@
-
-
-const wordElem = document.getElementById("wordToGuess");
-const playBtn = document.getElementById("playBtn");
-const popup = document.getElementById("popupContainer");
-const finalMessage = document.getElementById("finalMessage");
-
-// Words to guess
+// WORDS TO GUESS
 
 const wordsToGuess = ["crocodile", "tortue", "singe", "poisson", "araignée", "perroquet"];
-let selectedWord = wordsToGuess[Math.floor(Math.random() * wordsToGuess.length)];
 
-console.log(selectedWord);
+// Random word to guess
 
-const arrRightLetters = [];
-const arrWrongLetters = [];
+function randomIndex() {
+    let i = Math.floor(Math.random() * wordsToGuess.length);
+    return i; // Return index of random word
+}
 
-// Display words to guess
+let indexOfRW = 0;
+indexOfRW = randomIndex();
 
-function displayWord() {
+var randomWord = wordsToGuess[indexOfRW];
+var randomWordLength = randomWord.length;
+console.log(randomWord);
 
-    wordElem.innerHTML = `
-            ${selectedWord
-            .split('')
-            .map(
-                letter => `
-                    <span class="letterToGuess">
-                        ${arrRightLetters.includes(letter) ? letter : ''}
-                    </span>
-                    `
-            )
-            .join('')
-        }
-        `;
+// Display inputs word to guess
 
-    const internWord = wordElem.innerText.replace(/\n/g, '');
 
-    if (internWord === selectedWord) {
-        finalMessage.innerText = "Bravo ! Tu as gagné !";
-        popup.style.display = "flex";
+function displayInputs() {
+
+    for (var i = 1; i <= randomWordLength; i++) {
+        document.getElementById("guessedWord").innerHTML += '<div id="guessedLetterContainer' + i + '" class="guessedLetterContainer"><input type="text" id="guessedLetter' + i + '" class="guessedLetter" disabled></div>';
+    }
+
+    for (var j = 1; j <= randomWordLength; j++) {
+        document.getElementById("hiddenWord").innerHTML += '<div id="hiddenLetterContainer' + i + '" class="hiddenLetterContainer"><input type="text" id="hiddenLetter' + i + '" class="hiddenLetter" value="' + randomWord[j - 1] + '"></div>';
     }
 
 }
 
-displayWord();
+displayInputs();
 
-// Counter
+// PLAY
 
-const counter = document.getElementById("tryCounterNbr");
-counter.innerHTML = 7;
+var error = 0;
+var wrong = false;
+var nbWin = 0;
 
-// function decrementCounter() {
-//     do {
-//         counter.innerHTML - 1;
-//     }
-//     while (counter.innerHTML >= 0)
-// }
+function selectLetter(a) {
 
-// function incrementCounter() {
-//     for (c = 7; c <= 7; c--) {
-//         counter.innerHTML = c + "/7";
-//     }
-// }
+    var letter = 1;
 
-// incrementCounter();
+    document.getElementById("letter" + a).disabled = "true";
+    document.getElementById("letter" + a).style.backgroundColor = "black";
+    document.getElementById("letter" + a).style.color = "grey";
+    document.getElementById("inputTextHidden").value = a;
 
+    // Right letters
+    for (var k = 1; k <= randomWordLength; k++) {
 
-// Play
+        if (a == randomWord[k - 1]) {
+            document.getElementById("guessedLetter" + k).value = a;
+            nbWin++;
+        }
 
-const letterBtns = document.querySelectorAll(".letter");
+    }
 
-// const letter = "a";
+    // Wrong letters
+    for (var l = 1; l <= randomWordLength; l++) {
 
-// if (selectedWord.includes(letter)) {
-//     arrRightLetters.push(letter);
-//     displayWord();
-// }
+        if (a != randomWord[l - 1]) {
+            wrong = true;
+        }
 
-// else {
-//     arrWrongLetters.push(letter);
-//     // incrementCounter();
-// }
+        else if (a == randomWord[l - 1]) {
+            wrong = false;
+            break;
+        }
+    }
 
-
-
-for (var i = 0; i < letterBtns.length; i++) {
-
-    letterBtns[i].addEventListener("click", () => {
-
-        console.log(selectedLetter);
-
-        // if (selectedWord.includes(selectedLetter)) {
-        //     arrRightLetters.push(selectedLetter);
-        //     displayWord();
-        // }
-
-    })
 }
-const selectedLetter = letterBtns[i].innerText;
-
