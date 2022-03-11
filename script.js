@@ -5,7 +5,7 @@ const playBtn = document.getElementById("playBtn");
 const popup = document.getElementById("popupContainer");
 const finalMessage = document.getElementById("finalMessage");
 
-// Words to guess
+// WORDS TO GUESS
 
 const wordsToGuess = ["crocodile", "tortue", "singe", "poisson", "araignée", "perroquet"];
 let selectedWord = wordsToGuess[Math.floor(Math.random() * wordsToGuess.length)];
@@ -15,7 +15,7 @@ console.log(selectedWord);
 const arrRightLetters = [];
 const arrWrongLetters = [];
 
-// Display words to guess
+// DISPLAY WORD TO GUESS
 
 function displayWord() {
 
@@ -36,7 +36,7 @@ function displayWord() {
     const internWord = wordElem.innerText.replace(/\n/g, '');
 
     if (internWord === selectedWord) {
-        finalMessage.innerText = "Bravo ! Tu as gagné !";
+        finalMessage.innerHTML = "Bravo ! Tu as gagné !";
         popup.style.display = "flex";
     }
 
@@ -44,44 +44,14 @@ function displayWord() {
 
 displayWord();
 
-// Counter
+// PLAY
 
-const counter = document.getElementById("tryCounterNbr");
-counter.innerHTML = "7";
+function selectLetter(element) {
 
-function incrementCounter() {
-    for (c = 7; c <= 7; c--) {
-        counter.innerHTML = c + "/7";
+    var selectedLetter = element.innerHTML;
+
+    if (selectedWord.includes(selectedLetter)) {
+        arrRightLetters.push(selectLetter);
     }
+
 }
-
-
-// Play
-
-const letter = "x"
-
-if (selectedWord.includes(letter)) {
-    arrRightLetters.push(letter);
-    displayWord();
-}
-
-else {
-    arrWrongLetters.push(letter);
-    incrementCounter();
-}
-
-
-// const letterBtns = document.querySelectorAll(".letter");
-
-// for (var i = 0; i < letterBtns.length; i++) {
-
-//     let selectedLetter = letterBtns[i].innerText;
-
-//     letterBtns[i].addEventListener("click", () => {
-
-//         console.log(selectedLetter);
-
-//     })
-// }
-
-
