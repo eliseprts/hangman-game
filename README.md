@@ -19,9 +19,9 @@ Make a website version of the hangman word game.
 
 ### Rules
 
-[] Propose an hidden word
-[] Allow the selection of letters
-[] Verify if a selected letter belongs to the word
-[] Count the number of failure (lives)
-[] Check if it's a game over
-[] Check if the word as been found
+[ ] Propose an hidden word
+[ ] Allow the selection of letters
+[ ] Verify if a selected letter belongs to the word
+[ ] Count the number of failure (lives)
+[ ] Check if it's a game over
+[ ] Check if the word as been found
