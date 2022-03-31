@@ -25,3 +25,7 @@ Make a website version of the hangman word game.
 - [ ] Count the number of failure (lives)
 - [ ] Check if it's a game over
 - [ ] Check if the word as been found
+
+## Result
+
+![Capture d’écran 2022-03-31 à 13 33 02](https://user-images.githubusercontent.com/94377998/161045708-49364e25-4451-4c86-a13e-c7e89bbced05.png)
